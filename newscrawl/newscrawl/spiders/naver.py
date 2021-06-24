@@ -32,19 +32,16 @@ class NaverSpider(scrapy.Spider):
         doc = NewscrawlItem()
         press = response.css('#main_content > div.article_header > div.press_logo > a > img::attr(title)').get()
         title = response.css('#articleTitle::text').get()
-        write_time = response.css('#main_content > div.article_header > div.article_info > div > span::text').get().replace('오후','PM').replace('오전','AM')
-        write_time_dtime = datetime.strptime(write_time,"%Y.%m.%d. %p %I:%M")
+        # write_time = response.css('#main_content > div.article_header > div.article_info > div > span:nth-child(1)::text').get().replace('오후','PM').replace('오전','AM')
         section = response.meta['section']
         
-        print('-'*20)
-        print(section)
-        print(title)
-        print(press)
-        st = time.time()
         pos = self.okt.pos(title)
         keywords = [word[0] for word in pos if word[1] in self.tagset and word[0] not in self.quotes_special]
-        print(keywords)
-        print('소요 시간',time.time()-st)
         
-        # doc['press'] = press
-        # doc['title'] = title
+        doc['press'] = press
+        doc['title'] = title
+        # doc['write_time'] = datetime(write_time,'%Y.%m.%d. %p %I:%M')
+        doc['section'] = section
+        doc['keywords'] = keywords
+        
+        yield doc
