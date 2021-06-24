@@ -8,5 +8,8 @@ import scrapy
 
 class NewscrawlItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    press = scrapy.Field()
+    write_time = scrapy.Field()
+    section = scrapy.Field()
+    keywords = scrapy.Field()
