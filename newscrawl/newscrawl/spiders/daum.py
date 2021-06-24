@@ -60,5 +60,6 @@ class DaumSpider(scrapy.Spider):
         # doc['write_time'] = datetime.strptime(write_time,'%Y. %m. %d. %H:%M')
         doc['section'] = self.section_map[section]
         doc['keywords'] = keywords
+        doc['crawl_time'] = datetime.now()
         
         yield doc

@@ -43,5 +43,6 @@ class NaverSpider(scrapy.Spider):
         # doc['write_time'] = datetime(write_time,'%Y.%m.%d. %p %I:%M')
         doc['section'] = section
         doc['keywords'] = keywords
+        doc['crawl_time'] = datetime.now()
         
         yield doc

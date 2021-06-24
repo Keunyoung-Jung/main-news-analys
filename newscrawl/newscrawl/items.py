@@ -13,3 +13,5 @@ class NewscrawlItem(scrapy.Item):
     write_time = scrapy.Field()
     section = scrapy.Field()
     keywords = scrapy.Field()
+    crawl_time = scrapy.Field()
+    _id = scrapy.Field()

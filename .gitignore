@@ -1,3 +1,4 @@
 newsvenv
 *.pyc
 *.cfg
+localhost_mongo_key.json
