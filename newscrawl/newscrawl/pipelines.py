@@ -12,6 +12,7 @@ from newscrawl import MongoDB
 
 class NewscrawlPipeline:
     def process_item(self, item, spider):
-        collection = MongoDB.conn_mongodb(spider.name)
+        now_time = str(datetime.now()).split(':')[0].replace(' ','T')
+        collection = MongoDB.conn_mongodb(f'{spider.name}_{now_time}')
         collection.insert_one(item).inserted_id
         return item

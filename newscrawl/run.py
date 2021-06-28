@@ -45,10 +45,10 @@ def start_spider():
 def job_every_time_crawl() :
     start_spider()
 
+# job_every_time_crawl()
+schedule.every().hour.do(job_every_time_crawl)
 
-# schedule.every().day.at("15:02").do(job_every_time_crawl)
-job_every_time_crawl()
-
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+print('[Start] scheduler ready')
+while True:
+    schedule.run_pending()
+    time.sleep(1)
