@@ -9,7 +9,7 @@ class NaverSpider(scrapy.Spider):
     main_url = 'https://news.naver.com'
     okt = Okt()
     tagset = ['Noun','Alpha','Foreign']
-    quotes_special = ['“','”','‘','’','/']
+    quotes_special = ['“','”','‘','’','/','종합']
 
     def start_requests(self):
         yield scrapy.Request(url=self.main_url, callback=self.parse)

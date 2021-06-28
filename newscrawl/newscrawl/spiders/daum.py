@@ -9,7 +9,7 @@ class DaumSpider(scrapy.Spider):
     main_url = 'https://news.daum.net/'
     okt = Okt()
     tagset = ['Noun','Alpha','Foreign']
-    quotes_special = ['“','”','‘','’','/']
+    quotes_special = ['“','”','‘','’','/','종합']
     section_map = {
         '정치' : 'politics',
         '경제' : 'economy',
