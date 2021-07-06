@@ -6,3 +6,4 @@ konlpy
 schedule
 ipykernel
 wordcloud
+flask
