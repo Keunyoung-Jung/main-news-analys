@@ -7,7 +7,7 @@ def load_key(key_file) :
     return key
 
 class MongoDB :
-    mongo = load_key(key_file='/home/keyog/coding/main-news-analys/localhost_mongo_key.json')
+    # mongo = load_key(key_file='/home/keyog/coding/main-news-analys/localhost_mongo_key.json')
     mongodb = pymongo.MongoClient(f"mongodb://localhost:27017",
                                     username='root',password='root')
     @classmethod
