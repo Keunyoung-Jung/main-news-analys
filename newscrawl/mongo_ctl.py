@@ -2,20 +2,7 @@ import pymongo
 import pandas as pd
 from collections import Counter
 from datetime import datetime
-
-class MongoDB :
-    mongodb = pymongo.MongoClient(f"mongodb://{mongo['host']}:{mongo['port']}",
-                                    username=mongo['user'],password=mongo['password'])
-
-    @classmethod
-    def conn_mongodb(cls,db_name) :
-        try:
-            cls.mongodb.admin.command('ismaster')
-            resume_db = cls.mongodb.resume_db[f'{db_name}']
-        except :
-            cls.mongodb = app.config['MONGO_CONN']
-            resume_db = cls.mongodb.resume_db[f'{db_name}']
-        return resume_db
+from newscrawl.newscrawl import MongoDB
 
 time_arr = range(24)
 time_dict = dict()
