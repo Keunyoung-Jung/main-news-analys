@@ -33,12 +33,14 @@ def index():
 def crawl():
     if request.method == 'GET':
         start_spider()
-        return True,200
-    return False, 400
+        return 'True',200
+    return 'False', 400
 
 @app.route('/view')
 def view():
     if request.method == 'GET' :
         return get_mongo_data(),200
-    return False,400
+    return 'False',400
     
+if __name__=='__main__' :
+    app.run(host='0.0.0.0',port=8888,debug=True)
