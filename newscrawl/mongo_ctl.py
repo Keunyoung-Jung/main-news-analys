@@ -2,7 +2,7 @@ import pymongo
 import pandas as pd
 from collections import Counter
 from datetime import datetime
-from newscrawl.newscrawl import MongoDB
+from newscrawl import MongoDB
 
 time_arr = range(24)
 time_dict = dict()
